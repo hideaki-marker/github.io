@@ -14,7 +14,7 @@ public class Kougyou extends Gakusei {
 
 	@Override
 	public String gouhi() {
-		if (super.gouhi() == "不合格") {
+		if (super.gouhi() == "合格") {
 			if (sekkei >= 60) {
 				return "合格";
 			} else {
