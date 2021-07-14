@@ -14,15 +14,15 @@ public class Kougyou extends Gakusei {
 
 	@Override
 	public String gouhi() {
-		if (super.gouhi() == "‡Ši") {
+		if (super.gouhi() == "Ââ€¡Å i") {
 			if (sekkei >= 60) {
-				return "‡Ši";
+				return "Ââ€¡Å i";
 			} else {
-				return "•s‡Ši";
+				return "â€¢sÂâ€¡Å i";
 
 			}
 		} else {
-			return "•s‡Ši";
+			return "â€¢sÂâ€¡Å i";
 
 		}
 
@@ -30,7 +30,7 @@ public class Kougyou extends Gakusei {
 
 	public void infomation() {
 		super.infomation();
-		System.out.printf("İŒvF%6d",sekkei);
+		System.out.printf("è¨­è¨ˆã€€ï¼›%6d",sekkei);
 		System.out.println();
 		
 	}
