@@ -15,15 +15,15 @@ public class Futuu extends Gakusei {
 
 	@Override
 	public String gouhi() {
-		if (super.gouhi() == "‡Ši") {
+		if (super.gouhi() == "åˆæ ¼") {
 			if (syakai >= 60) {
-				return "‡Ši";
+				return "åˆæ ¼";
 			} else {
-				return "•s‡Ši";
+				return "ä¸åˆæ ¼";
 
 			}
 		} else {
-			return "•s‡Ši";
+			return "ä¸åˆæ ¼";
 
 		}
 
@@ -31,7 +31,7 @@ public class Futuu extends Gakusei {
 
 	public void infomation() {
 		super.infomation();
-		System.out.printf("Ğ‰ïF%6d",syakai);
+		System.out.printf("ç¤¾ä¼šã€€ï¼š%6d",syakai);
 		System.out.println();
 		
 	}
