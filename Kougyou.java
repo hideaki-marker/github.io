@@ -14,15 +14,15 @@ public class Kougyou extends Gakusei {
 
 	@Override
 	public String gouhi() {
-		if (super.gouhi() == "‡Ši") {
+		if (super.gouhi() == "不合格") {
 			if (sekkei >= 60) {
-				return "‡Ši";
+				return "合格";
 			} else {
-				return "•s‡Ši";
+				return "不合格";
 
 			}
 		} else {
-			return "•s‡Ši";
+			return "不合格";
 
 		}
 
