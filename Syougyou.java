@@ -14,11 +14,11 @@ public class Syougyou extends Gakusei {
 
 	@Override
 	public String gouhi() {
-		if (super.gouhi() == "‡Ši") {
+		if (super.gouhi() == "合格") {
 			if (boki >= 70) {
-				return "‡Ši";
+				return "合格";
 			} else {
-				return "•s‡Ši";
+				return "不合格";
 
 			}
 		} else {
