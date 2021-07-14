@@ -45,9 +45,9 @@ public class Gakusei {
 		
 		public String gouhi() {
 			if(kokugo + suugaku / 2 >= 60) {
-				return "‡Ši";
+				return "Ââ€¡Å i";
 			}else {
-				return "•s‡Ši";
+				return "â€¢sÂâ€¡Å i";
 			
 		}
 		}
@@ -55,8 +55,8 @@ public class Gakusei {
 		public void infomation() {
 			System.out.printf("%-10s",classRoom);
 			System.out.printf("%-12s",name);
-			System.out.printf("‘ŒêF%6d",kokugo);
-			System.out.printf("”ŠwF%6d ",suugaku);
+			System.out.printf("å›½èªã€€ï¼š%6d",kokugo);
+			System.out.printf("æ•°å­¦ã€€ï¼š%6d ",suugaku);
 			
 		}
 }
