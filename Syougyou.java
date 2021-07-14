@@ -14,22 +14,22 @@ public class Syougyou extends Gakusei {
 
 	@Override
 	public String gouhi() {
-		if (super.gouhi() == "‡Ši") {
+		if (super.gouhi() == "Ââ€¡Å i") {
 			if (boki >= 70) {
-				return "‡Ši";
+				return "Ââ€¡Å i";
 			} else {
-				return "•s‡Ši";
+				return "â€¢sÂâ€¡Å i";
 
 			}
 		} else {
-			return "•s‡Ši";
+			return "â€¢sÂâ€¡Å i";
 
 		}
 
 	}
 	public void infomation() {
 		super.infomation();
-		System.out.printf("•ë‹LF%6d",boki);
+		System.out.printf("ç°¿è¨˜ã€€ï¼š%6d",boki);
 		System.out.println();
 		
 	}
