@@ -1,10 +1,17 @@
-package practis;
+package school_A;
 
-public class HanteiException extends RuntimeException {
-	private String s = "";
-
-	HanteiException(String msg) {
-		super(msg);
+public class HanteiException extends RuntimeException{
+	//フィールド
+	String msg = ""; // エラーメッセージ
+	//コンストラクター
+	public HanteiException(){
+		this.msg = "エラーが発生しました。";
 	}
-
+	public HanteiException(String msg){
+		this.msg = msg;
+	}
+	//メソッド
+	public void getMsg(){
+		System.out.println(this.msg);
+	}
 }
