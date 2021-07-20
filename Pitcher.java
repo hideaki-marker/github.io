@@ -5,7 +5,7 @@ public class Pitcher extends Sportsman{
 	private int win;
 	
 	public void introduction() {
-		System.out.println(getName() + "Pitcher@Ÿ‚¿”" + win + "Ÿ");
+		System.out.println(getName() + "Pitcherã€€å‹ã¡æ•°" + win + "ã€€å‹");
 	}
 	
 	public Pitcher(String name, int win) {
@@ -14,3 +14,4 @@ public class Pitcher extends Sportsman{
 	}
 
 }
+ã€€å‹ã¡æ•°
