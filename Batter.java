@@ -5,7 +5,7 @@ public class Batter extends Sportsman{
 	private double avg;
 	
 	public void introduction() {
-		System.out.println(getName() + "Batter@‘Å—¦F" + avg + "Ÿ");
+		System.out.println(getName() + "Batter æ‰“ç‡ï¼š" + avg + "å‹");
 	}
 	
 	public Batter(String name, double avg) {
