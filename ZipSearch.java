@@ -1,74 +1,51 @@
-package chap07;
+package zipSearch;
 
 import java.io.BufferedReader;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class ZipSearch {
-	static String yuubin;//—X•Ö”Ô†‚Ì“ü—Í—p•Ï”
 
-	public static void main(String[] args) throws FileNotFoundException, IOException {
+	public static void main(String[] args) {
+		String zipNum ;// éƒµä¾¿ç•ªå·ã®å¤‰æ•°
 
-		try (Scanner bf = new Scanner(System.in)) {//“ü—Í‚Ìˆ×AScanner‚ÌƒI[ƒvƒ“
+		try (BufferedReader br = new BufferedReader
+				(new InputStreamReader(System.in));) {
 
 			do {
-				System.out.println("u—X•Ö”Ô†‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢(q‚ÅI—¹)@Fv");
-				yuubin = bf.next();//—X•Ö”Ô†‚Ì“ü—Í
-				if (yuubin.equals("q")) {//q‚ª“ü—Í‚³‚ê‚½ê‡AI—¹
-					System.out.println("I—¹‚µ‚Ü‚·B");
-				} else if (!yuubin.equals("q")) {//qˆÈŠO‚Ì“ü—Í
-					adress();
+				ZipBean be = new ZipBean();
+				Thread z = new Thread(be);
+				System.out.print("éƒµä¾¿ç•ªå·ã‚’å…¥åŠ›ã—ã¦ãã ã•ã„ï¼ˆqã§çµ‚äº†ï¼‰ ï¼š ");
+				zipNum = br.readLine();
+				z.start();
+				String regex = "^[^A-z]{3}-?[^A-z]{4}$";
+				Pattern p = Pattern.compile(regex);
+				Matcher m = p.matcher(zipNum);
 
+
+				if (m.find()) {
+					ZipBean.execute(zipNum);
+					z.join();
+
+				}else{
+					System.out.println("---éƒµä¾¿ç•ªå·ãŒä¸æ­£ã§ã™ã€‚---");
+					z.join();
 				}
-			} while (!yuubin.equals("q"));
+
+			} while (!zipNum.equals("q"));
+		} catch (FileNotFoundException e) {
+			System.out.println("éƒµä¾¿ç•ªå·ãƒ•ã‚¡ã‚¤ãƒ«ãŒå­˜åœ¨ã—ã¾ã›ã‚“ã€‚");
+		} catch (IOException e) {
+			System.out.println("å…¥åŠ›ã‚¨ãƒ©ãƒ¼ãŒç™ºç”Ÿã—ã¾ã—ãŸã€‚");
 		} catch (Exception e) {
-			System.out.println("ƒGƒ‰[‚ª”­¶‚µ‚Ü‚µ‚½B");
+			System.out.println("ã‚¨ãƒ©ãƒ¼ãŒç™ºç”Ÿã—ã¾ã—ãŸã€‚");
 		}
-		//adress();
+		System.out.println("çµ‚äº†ã—ã¾ã™ã€‚");
+	}
 
 	}
 
-	static void adress() throws IOException {//ZŠ‚ÌŒÄ‚Ño‚µƒƒ\ƒbƒh
-		try (BufferedReader br = new BufferedReader(
-				new InputStreamReader(new FileInputStream("01HOKKAI.CSV"), "MS932"));) {
 
-			String rec = "";//ƒtƒ@ƒCƒ‹‚Ì“Ç‚İ‚İ—p•Ï”
-
-			while ((rec = br.readLine()) != null) {//ƒtƒ@ƒCƒ‹‚Ì“Ç‚İ‚İ
-				rec = rec.replace("\"", "");//ƒ_ƒuƒ‹ƒNƒH[ƒe[ƒVƒ‡ƒ“‚ÌæŠO‚µ
-				String[] str = rec.split(",");//ƒJƒ“ƒ}‚Å‹æØ‚èA”z—ñ‚Ö‘ã“ü
-				String y_no = str[2];//ƒtƒ@ƒCƒ‹‚©‚ç—X•Ö”Ô†‚ğæ‚èo‚µ‚Ä•Ï”‚É‘ã“ü
-				if (yuubin.equals(y_no)) {//“ü—Í‚³‚ê‚½”Ô†‚Æ‡’v‚µ‚½ê‡
-					System.out.println("§" + y_no + "F" + str[6] + str[7] + str[8] + " ");
-					break;
-				} else {//ˆá‚Á‚½ê‡
-					int next = Integer.parseInt(yuubin);//intŒ^‚É•ÏŠ·‚µA1‘«‚µ‚ÄStringŒ^‚É–ß‚·
-					next += 1;
-					yuubin = 0 + String.valueOf(next);
-
-					System.out.println(yuubin);
-					if (yuubin.equals(y_no)) {//1‘«‚µ‚½”Ô†‚Æ‡’v‚·‚é”Ô†‚ª‚ ‚Á‚½‚È‚ç•\¦
-						System.out.println("§" + y_no + "F" + str[6] + str[7] + str[8] + " ");
-						break;
-					} else {//–³‚¯‚ê‚ÎEEE
-						System.out.println("ŠY“–‚È‚µ");
-						break;
-						
-					}
-
-				}
-
-			}
-			
-		}
-		int nextt= Integer.parseInt(yuubin);//intŒ^‚É•ÏŠ·‚µA1‘«‚µ‚ÄStringŒ^‚É–ß‚·
-		nextt += 1;
-		yuubin = 0 + String.valueOf(nextt);
-
-		System.out.println(yuubin);
-	}
-
-}
