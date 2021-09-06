@@ -14,7 +14,6 @@ public class Yubin_A {
 	private String cho;
 	// コンストラクター
 	public Yubin_A(){}
-	//第二のコンストラクター
 	public Yubin_A(String postcode,String todo,String shi,String cho){
 		this.postcode 	= postcode;
 		this.todo 		= todo;
@@ -38,7 +37,7 @@ public class Yubin_A {
 		より、郵便情報（都道府県、市区町村、町域を持つ
 		Yubinクラスのオブジェクト）を返す。
 	*/
-	public static Yubin_A getYubin(String postcode){//オブジェクトを返す
+	public static Yubin_A getYubin(String postcode){
 		Yubin_A 				yub = null;
 		Connection 			con = null;
 		PreparedStatement 	pst = null;
@@ -54,7 +53,6 @@ public class Yubin_A {
 			//SQL文を実行してDBから結果セットを得る
 			rs = pst.executeQuery();
 			while(rs.next()){ //結果セットの行数がある限り繰り返す
-				//第二のコンストラクターでオブジェクトの作成
 				yub = new  Yubin_A(rs.getString("postcode"),
 						         rs.getString("todo"),
 						         rs.getString("shi"),
@@ -62,7 +60,7 @@ public class Yubin_A {
 			}
 		}catch(SQLException e){
 			System.out.println("郵便番号検索中に障害が発生しました！");
-			System.out.println(pst);
+			System.out.println(sql);
 			e.printStackTrace();
 		}finally{
 			try{
@@ -74,6 +72,6 @@ public class Yubin_A {
 				e.printStackTrace();
 			}
 		}
-		return yub;//オブジェクトを返す
+		return yub;
 	}
 }
