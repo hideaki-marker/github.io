@@ -16,12 +16,12 @@ public class Line {
 		public static void main(String[] args) {
 			Scrape_re scrape_it = new Scrape_re("https://news.yahoo.co.jp/categories/it");
 			
-			System.out.println("ITƒjƒ…[ƒX");
+			System.out.println("ITãƒ‹ãƒ¥ãƒ¼ã‚¹");
 			String scrape = scrape_it.scrapeData();
 			
-	        LineNotify lineNotify = new LineNotify("kvkZmumqkACjedOeibz9h1FpLlWTpB3bsNw1NuNmXV1"); // LINE Notify‚ÌƒAƒNƒZƒXƒg[ƒNƒ“(“K‹X•ÏX)
+	        LineNotify lineNotify = new LineNotify("è‡ªåˆ†ã®ãƒˆãƒ¼ã‚¯ãƒ³"); // LINE Notifyã®ã‚¢ã‚¯ã‚»ã‚¹ãƒˆãƒ¼ã‚¯ãƒ³(é©å®œå¤‰æ›´)
 	        lineNotify.notify(scrape);
-	        System.out.println("java‚©‚çline‚Ö’Ê’m‚µ‚Ü‚µ‚½B");
+	        System.out.println("javaã‹ã‚‰lineã¸é€šçŸ¥ã—ã¾ã—ãŸã€‚");
 	    }
 
 	
